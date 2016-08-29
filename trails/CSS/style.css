@@ -1,0 +1,551 @@
+
+@font-face { font-family: Roboto; src: url('Roboto-Regular.ttf'); } 
+
+
+
+html, body {
+	margin-top: -10px;
+	height: 100%;
+	font-family: 'Roboto';
+	
+}
+
+.mainWrapper {
+	width: 1000px;
+	background: #F5FFFA; 
+	margin: 0 auto;
+	clear: both;
+	border: 1px solid #71A865;
+	box-shadow: 0 0 10px #71A865;
+
+}
+
+header {
+	background: #F5FFFA;
+	height: 90px;
+}
+ 
+header h1 a {
+	float: left;
+	width: 700px;
+	padding: 20px 0 0 25px;
+	color: #71A865; /*#71A865*/
+	text-decoration: none;
+
+}
+
+
+
+/*.search {
+	padding: 36px 10px 10px 10px;
+	float: right;
+
+}
+
+#searchField {
+	box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: 13px;
+    padding: 2px 5px;
+}
+
+#searchButton {
+    background-color: #71A865;
+    border: none;
+    color: black;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 2px;
+
+}
+
+#searchButton:hover {
+	color: white;
+}*/
+
+/*main menu*/ 
+.menuitems {
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #71A865;
+    text-align: center;
+
+}
+
+.menuitems li {
+    display: inline-block;
+    border-right: 1px solid #bbb;
+
+}
+
+.menuitems li:last-child {
+    border-right: none;
+
+
+}
+
+.menuitems li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.menuitems li a:hover {
+    background-color: #337326;
+    color: black;
+
+}
+/*END main menu*/ 
+
+.slider .slick-next {
+    right: 25px;
+}
+
+.slider .slick-prev {
+    left: 25px;
+}
+
+.slider .slick-prev, .slick-next {
+	    z-index: 1;
+}
+
+
+
+#infoBlock {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: stretch;
+    margin-right: 10px;
+    }
+
+ .infoBlock-item{
+   display: inline-block;
+    text-align: center;
+    color: #71A865;
+ }   
+
+.infoBlock-item:nth-child(1) {
+    order: 0;
+    flex: 1 1 auto;
+    align-self: center;
+    align-content: 
+    }
+
+.flex-item:nth-child(2) {
+    order: 0;
+    flex: 1 1 auto;
+    align-self: center;
+    }
+
+.flex-item:nth-child(3) {
+    order: 0;
+    flex: 1 1 auto;
+    align-self: center;
+    }
+#infoBlock .caption a{
+    color: black; /*#337326*/
+}
+
+#infoBlock .caption a:link {
+    text-decoration: none;
+}
+
+#infoBlock .caption a:hover {
+    text-decoration: underline;
+    color: #71A865;
+}
+
+#infoBlock .infoBlock-item .caption {
+    margin-bottom: 20px;
+}
+
+#infoBlock .infoBlock-item .txt {
+    display: inline-block;
+    text-align: center;
+    color: black;
+}
+
+
+
+.mountQuote{
+	width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+.mountQuote_title{
+	display: inline-block;
+    padding: 0 10px;
+    margin: 10px 0;
+    background-color: #F5FFFA;
+    color: #337326;
+}
+
+.mountQuote:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background-color: #e5e5dc;
+    /*width: 100%;*/
+    height: 1px;
+    top: 50%;
+    left: 20px;
+    right: 20px;
+}
+
+
+footer {
+	height: 50px;
+	background: #71A865;
+	clear: both;
+}
+
+footer p {
+	padding: 20px 10px 10px 10px;
+	color: black;
+}
+
+#gallery {
+   margin: 16px 0 0 20px;
+}
+
+div.img {
+    margin: 5px;
+    float: left;
+    width: 180px;
+}
+
+div.img img {
+    width: 100%;
+    height: auto;
+}
+
+.trails_list ul li {
+	padding: 10px;
+    margin-right: 30px;
+	list-style: none;
+    text-align: justify;
+}
+
+.order_button {
+	background-color: #71A865;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0 0 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 2px;
+
+	
+}
+
+.order_button:hover {
+	background-color: #337326;
+	color: black;
+}
+
+.order_form form {
+	margin:10px auto;
+    max-width: 600px;
+    padding: 20px 12px 10px 20px;
+}
+
+.order_form form label {
+	margin: 5px;
+}
+
+.order_form form input {
+	margin: 10px;
+}
+
+.form_fieldset {
+	border:1px solid #999;
+	border-radius:4px;
+	box-shadow:0 0 5px #999;
+	margin: 10px;
+
+
+}
+
+legend {
+	background:#F5FFFA;
+}
+
+.order_form .order_button {
+	background-color: #71A865;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0 0 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 2px;
+   
+	
+}
+
+ .nameOfTrek {
+ 	width: 100%;
+ }
+
+#afterOrderText {
+    display: none;    
+}
+
+#afterOrderText h3{
+    margin: 25px;
+}
+
+
+/*Сторінка швидкої фільтрації маршрутів*/
+.filter_list {
+	margin: 10px;
+}
+
+ul#itemsToFilter {
+	list-style: none;
+}
+
+ul#itemsToFilter li:hover {
+	text-decoration: underline;
+	
+}
+
+ul#itemsToFilter li a{
+	text-decoration: none;
+	color: black;
+}
+
+ul#itemsToFilter li a:hover{
+	text-decoration: none;
+	color: #337326;
+}
+
+#filterSection {
+	display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: stretch;
+    margin-left: 130px;
+
+}
+
+.filterSection:nth-child(1) {
+    order: 0;
+    flex: 3 1 auto;
+    align-self: center;
+    align-content: 
+    }
+
+.flex-item:nth-child(2) {
+    order: 0;
+    flex: 3 1 auto;
+    align-self: center;
+    }
+
+.flex-item:nth-child(3) {
+    order: 0;
+    flex: 3 1 auto;
+    align-self: center;
+    }
+
+#filterSection li{
+	list-style: none;
+}
+
+.showItem {
+    display: list-item;
+
+}
+.hideItem {
+    display: none;
+}
+
+.trails_list ul li img {
+	float: left;
+	margin: 0 10px 10px 0;
+}
+
+/*Coments*/
+.comments_form form{
+	margin: 10px 10px 10px 50px;
+
+}
+
+.comments_form form input{
+	padding: 5px;
+	margin-top: 5px;
+
+	float:left;
+    clear:both;
+
+}
+.comments_form form label {
+    display: inline-block;
+    width: 150px;
+}
+.comments_textarea {
+	margin: 5px 5px 5px 0;
+	float:left;
+    clear:both;
+	
+}
+.comment_button{
+	background-color: #71A865;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0 20px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 2px;
+    float:left;
+    clear:both;
+}
+.comment_button:hover{
+	background-color: #337326;
+	color: black;
+}
+
+
+.comments {
+    margin: 80px 10px 0 50px;
+}
+
+.userComment p{
+    margin: 3px 0 3px 0;
+
+
+}
+.comments .userName {
+    margin: 50px 10px 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+
+}
+
+.commentReply {
+    padding: 0 3px 3px 3px;
+    margin: 0;
+    color: #71A865;
+    text-align: center;
+    text-decoration: underline;
+    display: inline-block;
+    font-size: 14px;
+    float:left;
+    clear:both;
+    word-wrap: break-word;
+ 
+}
+/*Coments END*/
+
+/*MAPS*/
+
+div .mapheader{
+	margin: 20px 20px 20px 0;
+	display: block;
+}
+
+div .mapheader:hover{
+	 text-decoration: underline;
+}
+
+#about_us {
+    margin: 20px;
+    text-align: justify;
+}
+
+#about_us img {
+    float: left;
+    padding: 5px 10px 0 5px;
+}
+.clearer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 480px) {
+	.mainWrapper {
+		width: 380px;}
+
+	.mainWrapper header {
+		height: 100px;
+
+	}
+ 
+	header h1 a {
+		text-align: center;
+
+		width: 300px;
+		padding: 5px 0 0 5px;
+	}
+
+	.search {
+		display: inline-block;
+		padding: 10px;
+	}
+	  
+
+	.menuitems li {
+    	display: block;
+
+
+	}
+
+	.menuitems li a {
+		 display: inline-block;
+
+	    color: white;
+	    text-align: center;
+	    padding: 14px 16px;
+	    text-decoration: none;
+	}
+
+	main .slider{
+		display: none;
+	}
+	figure {
+		display: inline-block;
+		text-align: center;
+		color: #71A865;
+		}
+
+	#infoBlock {
+		display: block;
+	      }
+
+	.infoBlock-item:nth-child(1) {
+	    align-self: center;
+	    align-content: 
+	    }
+
+	.flex-item:nth-child(2) {
+	    align-self: center;
+	    }
+
+	.flex-item:nth-child(3) {
+	    align-self: center;
+	    }
+
+}

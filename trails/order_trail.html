@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Carpathian trails</title>
+	<meta charset="UTF-8">
+	<!-- <script src="JS/angular.min.js"></script> -->
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	<link rel="stylesheet" type="text/css" href="plugins/slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="plugins/slick/slick-theme.css"/>
+</head>
+
+<body>
+<div class="mainWrapper clearer">
+	<header class="clearer">
+		<h1><a href="carpatian trails.html">Carpatian trails</a></h1>		
+	</header>
+	<main>
+		<nav class="mainmenu">
+			<ul class="menuitems">
+				<li><a href="#">Закарпаття</a></li><!--
+				--><li><a href="lv_trails.html">Львівська область</a></li><!--
+				--><li><a href="if_trails.html">Івано-франківська область</a></li><!--
+				--><li><a href="che_trails.html">Чернівецька область</a></li><!--
+				--><li><a href="ro_trails.html">Румунія</a></li><!--
+				--><li><a href="pol_trails.html">Польща</a></li>
+			</ul>			
+			
+		</nav>
+		<div id="afterOrderText">
+			<h3>Ваше замовлення прийнято!</h3>
+		</div>
+		<section class="order_form">
+			<form action="order" method="post" onsubmit="return sendRequest('http://localhost/order', orderFunction);">
+				<section class="mountQuote">
+					<h3 class="mountQuote_title">Офомити замовлення</h3>
+				</section>
+				<label>Ваш маршрут:<input type="text" name="trek_name" value="Track name"required="" id="nameOfTrek"></input>*</label>
+				 <fieldset class="form_fieldset">
+					  <legend>1 крок</legend>
+					  	<label>Ім'я:<input type="text" name="name" value="Your name" required=""></input>*</label>
+					  	<label>Прізвище:<input type="text" name="surname" value="Your surname" required=""></input>*</label>
+				 </fieldset>
+				 <fieldset class="form_fieldset">
+				 	<legend>2 крок</legend> 
+				 		<div><label>Номер телефону:<input type="tel" name="phone_number" value="Your phone number" required="">*</label></div>
+				 		<div><label>e-mail:<input type="email" name="email_address" value="email@gmail.com" required="">*</label></div>
+				 </fieldset>
+				 <fieldset class="form_fieldset">
+				 	<legend>3 крок</legend>
+				 		<div><label>Оберіть дату:<input type="date" name="date" value="Your date"></input></label></div>
+				 		<div><label>Вкажіть кількість осіб:
+							<select name="num" value="people">
+							  <option value="1" selected>1</option>
+							  <option value="2">2</option>
+							  <option value="3">3</option>
+							  <option value="3">3</option>
+							  <option value="4">4</option>
+							  <option value="5">5</option>
+							  <option value="6">6</option>
+							  <option value="7">7</option>
+							  <option value="8">8</option>
+							  <option value="9">9</option>
+							  <option value="10">10</option>
+							</select>
+						</label></div>
+				 </fieldset>	
+				 <fieldset class="form_fieldset">
+				 	<legend>Ваш коментар:</legend>
+				 	<textarea class="form_textarea" name="comment" value="Your comment" rows="10" cols="76"></textarea>
+				 </fieldset>
+				 
+				 <button class="order_button" name="submit">Замовити трекінг-маршрут</button>
+				 		
+			</form>
+		</section>
+
+		<footer>
+			<p>© 2016 Мар'яна Брусак</p>
+		</footer>
+		</main>
+
+  	<script>
+  		var trailName = localStorage.getItem('trailName');
+  		var nameOfTrek = document.getElementById('nameOfTrek');
+  		nameOfTrek.value = trailName;
+
+  	</script>
+
+  	<script>
+  		function sendRequest(url, cfunc) {
+  			try {  			
+	  			var formElement = document.querySelector("form");
+			  	var xhttp;
+			 	 xhttp = new XMLHttpRequest();
+			 	 xhttp.onreadystatechange = function() {
+			    	if (xhttp.readyState == 4 && xhttp.status == 201) {
+			      	cfunc(xhttp);
+/*			      	orderFunction();*/
+			    	}
+			  	};
+
+		 	 	xhttp.open("POST", url, true);
+		  		xhttp.send(new FormData(formElement));
+	  		}
+	  		catch(e) {}
+
+	  		return false;
+		}
+  	
+  		function orderFunction() {
+  			var orderForm = document.getElementsByClassName('order_form')[0];
+  			var afterOrderText = document.getElementById('afterOrderText');
+
+  			if (orderForm.style.display != 'none') {
+  				orderForm.style.display = 'none';
+  				afterOrderText.style.display = 'block';
+  			} else {
+  				orderForm.style.display = 'block';
+  			}   
+
+  		}
+
+  	</script>
+				
+	</body>
+	</div>
+</html>

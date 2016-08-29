@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Carpathian trails</title>
+	<meta charset="UTF-8">
+	<!-- <script src="JS/angular.min.js"></script> -->
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	<link rel="stylesheet" type="text/css" href="plugins/slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="plugins/slick/slick-theme.css"/>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6TmP4E0cjlXC7i-iDSeYvglmcmc5eRbA"></script>
+	<script src="JS/map.js"></script>
+	
+
+</head>
+
+<body>
+<div class="mainWrapper clearer">
+	<header class="clearer">
+		<h1><a href="carpatian trails.html">Carpatian trails</a></h1>		
+	</header>
+	<main>
+		<nav class="mainmenu">
+			<ul class="menuitems">
+				<li><a href="z_trails.html">Закарпаття</a></li><!--
+				--><li><a href="lv_trails.html">Львівська область</a></li><!--
+				--><li><a href="if_trails.html">Івано-франківська область</a></li><!--
+				--><li><a href="che_trails.html">Чернівецька область</a></li><!--
+				--><li><a href="ro_trails.html">Румунія</a></li><!--
+				--><li><a href="pol_trails.html">Польща</a></li>
+			</ul>			
+			
+		</nav>
+		
+		<div class="slider">
+			<div><img src="images/panorama.jpg" width="1000px"></div>
+			<div><img src="images/slider/panorama1.jpg" width="1000px"></div>
+			<div><img src="images/slider/panorama2.jpg" width="1000px"></div>
+			<div><img src="images/slider/panorama3.jpg" width="1000px"></div>
+			<div><img src="images/slider/panorama4.jpg" width="1000px"></div>
+		</div>
+		<section class="mountQuote">
+			<h3 class="mountQuote_title">Маршрути Румунії</h3>
+		</section>
+
+		<section class="trails_list">
+			<ul>
+				<li>
+					<h3 class="trail_name" id="pjetrosul">Маршрут #11 г.П'єтросул (рум. Vârful Pietrosul) </h3>
+					<img src="images/Pietrosul_Rodnei.jpg" width="200px">
+					<div>Найвища вершина (2303 м) гірського масиву Родна, Східних Карпат у Румунії. Вона знаходиться поблизу міста Борша і села Мойсей в повіті Марамуреш. Гора, також є найвищою вершиною Східних Карпат. 
+					Ро́дна го́ри (рум. Munţii Rodnei), гори на заході Румунії у Трансільванії, частина Східних Карпат, частині Карпат.</div>
+					<a href="order_trail.html"><input class="order_button" type="button" name="order" value="Замовити"></input></a>
+					<div onclick="HideShow(event)" class="magicButton mapheader" data-map-id="map11">Сховати карту району </div>
+    				<div id="map11" style="width:600px;height:400px;"></div>
+				</li>				
+			</ul>
+			
+		</section>
+		<section class="mountQuote">
+			<h3 class="mountQuote_title">Коментарі</h3>
+		</section>
+		<section class="comments_form">
+			<form action="comment" method="post" onsubmit="return sendRequest('http://localhost/comment');">			
+				<div>
+					<label >Ваше ім'я:<input type="text" name="name" value="" placeholder="Ім'я" required=""></input></label>
+				</div>
+				<div>
+					<label>Ваш e-mail:<input type="email" name="email" value="" placeholder="e-mail" required=""></input></label>
+				</div>
+				<div>
+					<label>Ваш коментар:<textarea class="comments_textarea" name="comment" rows="10" cols="76"></textarea></label>
+				</div>
+				<input type="hidden" value="z" name="page">
+				<button class="comment_button" name="submit">Прокоментувати</button>
+		</section>
+		<section class="comments">
+			<article class="comment">
+				<div class="userName">
+					<p>Name1</p>
+				</div>
+				<div class="userComment">
+					<p>Comment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment textComment text</p>
+				</div>
+			</article>
+		</section>
+
+		<footer>
+			<p>© 2016 Мар'яна Брусак</p>
+		</footer>
+		</main>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="plugins/slick/slick.min.js"></script>
+
+	<script type="text/javascript">
+	    $(document).ready(function(){
+	      $('.slider').slick({
+	          dots: true,
+			  infinite: true,
+			  speed: 300,
+			  slidesToShow: 1,
+			  adaptiveHeight: true
+	       });
+	  });
+  	</script>
+
+  	<script src="JS/form.js"></script>
+
+ 	<script src="JS/comments.js"></script>
+
+ 	<script>
+  		getComments('ro');
+	</script>	
+
+ 	<script>
+
+		var data = [
+			{
+				Lat: 47.6,
+				Lng: 24.63,
+				id: "map11",
+				title: "г.П'єтросул (рум. Vârful Pietrosul) (2303 м.)"
+			}
+		];
+
+		initGoogleMaps(data);
+  	</script>
+  	
+				
+	</body>
+	</div>
+</html>
