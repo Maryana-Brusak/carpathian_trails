@@ -380,6 +380,10 @@ ul#itemsToFilter li a:hover{
 	list-style: none;
 }
 
+#filterSection ul label {
+    font-weight: bold;
+}
+
 .showItem {
     display: list-item;
 
