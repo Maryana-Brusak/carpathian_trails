@@ -10,7 +10,7 @@ const server = restify.createServer({
 });
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://Mary:erl13111986@ds017896.mlab.com:17896/db_carpatian_trails');/*mongodb://<dbuser>:<dbpassword>@ds017896.mlab.com:17896/db_carpatian_trails*/
+mongoose.connect('mongodb://root:trails123@ds017896.mlab.com:17896/db_carpatian_trails');/*mongodb://<dbuser>:<dbpassword>@ds017896.mlab.com:17896/db_carpatian_trails*/
 
 const Order = mongoose.model('Order', mongoose.Schema({
  trek_name: String,
