@@ -77,7 +77,7 @@ header p a {
 }*/
 
 /*main menu*/ 
-.menuitems {
+/*.menuitems {
     list-style-type: none;
     margin:0;
     padding: 0;
@@ -99,6 +99,76 @@ header p a {
 
 }
 
+.menuitems li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.menuitems li a:hover {
+    background-color: #337326;
+    color: black;
+
+}*/
+
+.menuitems {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: center;
+    padding-left: 40px;
+    list-style-type: none;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #71A865;
+    
+
+}
+
+.menuitems li {
+   /* display: inline-block;*/
+    border-right: 1px solid #bbb;
+
+}
+
+.menuitems li :nth-child(1) {
+    order: 0;
+    flex: 1 1 auto;
+    align-self: center;    
+    }
+
+.menuitems li :nth-child(2) {
+    order: 0;
+    flex: 1 1 auto;
+    align-self: center;
+    }
+
+    .menuitems li :nth-child(3) {
+    order: 0;
+    flex: 1 1 auto;
+    align-self: center;
+    }
+
+    .menuitems li :nth-child(4) {
+    order: 0;
+    flex: 1 1 auto;
+    align-self: center;
+    }
+
+    .menuitems li :nth-child(5) {
+    order: 0;
+    flex: 1 1 auto;    
+    }
+
+ .menuitems li:last-child {
+    border-right: none;
+
+
+}
 .menuitems li a {
     display: block;
     color: white;
