@@ -45,74 +45,6 @@ header p a {
 }
 
 
-/*.search {
-	padding: 36px 10px 10px 10px;
-	float: right;
-
-}
-
-#searchField {
-	box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 2px;
-    font-size: 13px;
-    padding: 2px 5px;
-}
-
-#searchButton {
-    background-color: #71A865;
-    border: none;
-    color: black;
-    padding: 5px 12px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    border-radius: 2px;
-
-}
-
-#searchButton:hover {
-	color: white;
-}*/
-
-/*main menu*/ 
-/*.menuitems {
-    list-style-type: none;
-    margin:0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #71A865;
-    text-align: center;
-
-}
-
-.menuitems li {
-    display: inline-block;
-    border-right: 1px solid #bbb;
-
-}
-
-.menuitems li:last-child {
-    border-right: none;
-
-
-}
-
-.menuitems li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-.menuitems li a:hover {
-    background-color: #337326;
-    color: black;
-
-}*/
-
 .menuitems {
 
     display: flex;
@@ -147,22 +79,22 @@ header p a {
     align-self: center;
     }
 
-    .menuitems li :nth-child(3) {
-    order: 0;
-    flex: 1 1 auto;
-    align-self: center;
-    }
+.menuitems li :nth-child(3) {
+order: 0;
+flex: 1 1 auto;
+align-self: center;
+}
 
-    .menuitems li :nth-child(4) {
-    order: 0;
-    flex: 1 1 auto;
-    align-self: center;
-    }
+.menuitems li :nth-child(4) {
+order: 0;
+flex: 1 1 auto;
+align-self: center;
+}
 
-    .menuitems li :nth-child(5) {
-    order: 0;
-    flex: 1 1 auto;    
-    }
+.menuitems li :nth-child(5) {
+order: 0;
+flex: 1 1 auto;    
+}
 
  .menuitems li:last-child {
     border-right: none;
@@ -397,9 +329,16 @@ legend {
 	margin: 10px;
 }
 
+
 ul#itemsToFilter {
 	list-style: none;
+    list-style-image: url('rsz_tree.gif');
+    columns: 3;
+    column-gap: 80px;
+    margin-left: 20px;
+
 }
+
 
 ul#itemsToFilter li:hover {
 	text-decoration: underline;
@@ -409,6 +348,7 @@ ul#itemsToFilter li:hover {
 ul#itemsToFilter li a{
 	text-decoration: none;
 	color: black;
+    font-size: 20px;
 }
 
 ul#itemsToFilter li a:hover{
@@ -424,7 +364,7 @@ ul#itemsToFilter li a:hover{
     align-content: center;
     align-items: stretch;
     margin-left: 130px;
-
+    color: #337326;   
 }
 
 .filterSection:nth-child(1) {
@@ -450,8 +390,15 @@ ul#itemsToFilter li a:hover{
 	list-style: none;
 }
 
-#filterSection ul label {
+#filterSection ul li.filterHeader {
     font-weight: bold;
+}
+
+#filterSection ul label {
+-webkit-user-select: none; 
+    -moz-user-select: none; 
+    -khtml-user-select: none; 
+    -ms-user-select: none; 
 }
 
 .showItem {
