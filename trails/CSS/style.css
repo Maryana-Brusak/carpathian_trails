@@ -71,29 +71,29 @@ header p a {
     order: 0;
     flex: 1 1 auto;
     align-self: center;    
-    }
+}
 
 .menuitems li :nth-child(2) {
     order: 0;
     flex: 1 1 auto;
     align-self: center;
-    }
+}
 
 .menuitems li :nth-child(3) {
-order: 0;
-flex: 1 1 auto;
-align-self: center;
+    order: 0;
+    flex: 1 1 auto;
+    align-self: center;
 }
 
 .menuitems li :nth-child(4) {
-order: 0;
-flex: 1 1 auto;
-align-self: center;
+    order: 0;
+    flex: 1 1 auto;
+    align-self: center;
 }
 
 .menuitems li :nth-child(5) {
-order: 0;
-flex: 1 1 auto;    
+    order: 0;
+    flex: 1 1 auto;    
 }
 
  .menuitems li:last-child {
@@ -248,7 +248,9 @@ div.img img {
 	list-style: none;
     text-align: justify;
 }
+.trails_list h3 {
 
+}
 .order_button {
 	background-color: #71A865;
     border: none;
@@ -332,7 +334,7 @@ legend {
 
 ul#itemsToFilter {
 	list-style: none;
-    list-style-image: url('rsz_tree.gif');
+    list-style-image: url('tree.gif');
     columns: 3;
     column-gap: 80px;
     margin-left: 20px;
@@ -395,7 +397,7 @@ ul#itemsToFilter li a:hover{
 }
 
 #filterSection ul label {
--webkit-user-select: none; 
+    -webkit-user-select: none; 
     -moz-user-select: none; 
     -khtml-user-select: none; 
     -ms-user-select: none; 
@@ -509,6 +511,41 @@ div .mapheader:hover{
     float: left;
     padding: 5px 10px 0 5px;
 }
+
+.rated, .unrated {
+    display: inline-block;
+    margin-right: 2px;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+}
+
+.rated {
+    background-color: #337326;
+}   
+
+.unrated {
+    background-color: #9CC893; 
+}
+
+.rating {
+    order: 0;
+    flex: 2 1 auto;
+    align-self: center; 
+    margin-left: 20px;
+    margin-top: 4px;
+}
+
+.trailwrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: stretch;
+}
+
+
 .clearer:after {
   content: "";
   display: table;
