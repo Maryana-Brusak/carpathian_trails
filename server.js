@@ -30,6 +30,19 @@ const Comment = mongoose.model('Comment', mongoose.Schema({
  page: String
 }));
 
+const Rating =  mongoose.model('Rating', mongoose.Schema({
+	rating: Number,
+	trailId: String,
+	count: Number
+}));
+
+/*const Trail = mongoose.model('Trail', mongoose.Schema ({
+	header: String,
+	image: ,
+	description: String,
+	map: []
+}));
+*/
 server.use(restify.acceptParser(server.acceptable));
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
@@ -65,3 +78,30 @@ server.post('order', (req, res) => {
 server.get(/\/trails\/?.*/, restify.serveStatic({
     directory: __dirname
 }));
+
+server.post('rating/:trailId', (req, res) => {
+	var trailId = req.params.trailId;
+	var rating = req.params.rating;
+
+	Rating.findOne({'trailId': trailId}, function (err, ratingModel) {
+		if (!ratingModel) {
+			ratingModel = new Rating (
+				{rating: 0, trailId: trailId, count: 0}
+			);
+		}
+
+		ratingModel.rating = (ratingModel.rating * ratingModel.count + parseInt(rating))/(++(ratingModel.count));
+		ratingModel.save();
+		res.send (200, Math.round(ratingModel.rating));
+	})
+
+});
+
+server.get('rating/:trailId', (req, res) => {
+	var trailId = req.params.trailId; 	
+
+	Rating.findOne({'trailId': trailId}, function (err, ratingModel) {
+		res.send (200, ratingModel ? Math.round(ratingModel.rating) : 0);		
+	})
+
+});
