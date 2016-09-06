@@ -16,11 +16,7 @@
 	  		catch(e) {}
 
 	  		return false;
-		}
-
-		/*function resetFunction() {
-				document.querySelector("form").reset();
-		}*/
+		}	
 
 		function commentRender(name, comment) {
 			var divName = document.createElement('div');
