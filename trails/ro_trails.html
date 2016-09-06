@@ -45,7 +45,10 @@
 		<section class="trails_list">
 			<ul>
 				<li>
-					<h3 class="trail_name" id="pjetrosul">Маршрут #11 г.П'єтросул (рум. Vârful Pietrosul) </h3>
+					<div class="trailwrapper">
+						<h3 class="trail_name" id="pjetrosul">Маршрут #11 г.П'єтросул (рум. Vârful Pietrosul) </h3>
+						<div class="rating" data-trail="pjetrosul"></div>
+					</div>
 					<img src="images/Pietrosul_Rodnei.jpg" width="200px">
 					<div>Найвища вершина (2303 м) гірського масиву Родна, Східних Карпат у Румунії. Вона знаходиться поблизу міста Борша і села Мойсей в повіті Марамуреш. Гора, також є найвищою вершиною Східних Карпат. 
 					Ро́дна го́ри (рум. Munţii Rodnei), гори на заході Румунії у Трансільванії, частина Східних Карпат, частині Карпат.</div>
@@ -103,6 +106,15 @@
 	       });
 	  });
   	</script>
+  	
+  	<script src="JS/rating.js"></script>
+
+	<script>
+		var ratingElements = document.getElementsByClassName('rating');
+		for (var i = 0; i < ratingElements.length; i++) {
+			rating(ratingElements[i]);
+		}	
+	</script>
 
   	<script src="JS/form.js"></script>
 

@@ -3,7 +3,7 @@
 <head>
 	<title>Carpathian trails</title>
 	<meta charset="UTF-8">
-	<!-- <script src="JS/angular.min.js"></script> -->
+	
 	<link rel="stylesheet" type="text/css" href="CSS/style.css">
 	<link rel="stylesheet" type="text/css" href="plugins/slick/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="plugins/slick/slick-theme.css"/>
@@ -45,9 +45,12 @@
 		<section class="trails_list">
 			<ul>
 				<li>
+					<div class="trailwrapper">
 					<h3 class="trail_name" id="rysy">Маршрут #14  г. Риси (словац. та пол. Rysy)</h3>
-					<img src="images/rysy.jpg" width="200px">
-					<div>ора в Карпатах, у Високих Татрах. Знаходиться на польсько-словацькому кордоні. Має три вершини: найбільша з яких займає центральне місце на території Словаччини - 2503 м, північна вершина є найвищою точкою Польщі - 2499 м, третя вершина також лежить на території Словаччини - 2473 м. Свою назву гора отримала найімовірніше завдяки жолобам та ярам, якими вона вкрита, що нагадують подряпини та смуги. Однак за іншою версією Риси є просто множиною слова рись, хоча рисі насправді не живуть за межами лісової частини передгір'я. Сьогодні Риси - популярний туристичний об'єкт і найвища гора в Татрах куди відкритий вільний доступ для самостійних екскурсій.</div>
+					<div class="rating" data-trail="rysy"></div>
+					</div>
+					<img src="images/rysy.jpg" width="200px">					
+					<div>Гора в Карпатах, у Високих Татрах. Знаходиться на польсько-словацькому кордоні. Має три вершини: найбільша з яких займає центральне місце на території Словаччини - 2503 м, північна вершина є найвищою точкою Польщі - 2499 м, третя вершина також лежить на території Словаччини - 2473 м. Свою назву гора отримала найімовірніше завдяки жолобам та ярам, якими вона вкрита, що нагадують подряпини та смуги. Однак за іншою версією Риси є просто множиною слова рись, хоча рисі насправді не живуть за межами лісової частини передгір'я. Сьогодні Риси - популярний туристичний об'єкт і найвища гора в Татрах куди відкритий вільний доступ для самостійних екскурсій.</div>
 					<a href="order_trail.html"><input class="order_button" type="button" name="order" value="Замовити"></input></a>
 					<div onclick="HideShow(event)" class="magicButton mapheader" data-map-id="map14">Сховати карту району </div>
     				<div id="map14" style="width:600px;height:400px;"></div>
@@ -87,6 +90,13 @@
 			<p>© 2016 Мар'яна Брусак</p>
 		</footer>
 		</main>
+	<script src="JS/rating.js"></script>
+	<script>
+		var ratingElements = document.getElementsByClassName('rating');
+		for (var i = 0; i < ratingElements.length; i++) {
+			rating(ratingElements[i]);
+		}	
+	</script>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript" src="plugins/slick/slick.min.js"></script>

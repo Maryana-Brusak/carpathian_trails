@@ -48,7 +48,10 @@
 		<section class="trails_list">
 			<ul>
 				<li>
-					<h3 class="trail_name" id="pamir">Маршрут #10  Памір, г.Томнатик</h3>
+					<div class="trailwrapper">
+						<h3 class="trail_name" id="pamir">Маршрут #10  Памір, г.Томнатик</h3>
+						<div class="rating" data-trail="pamir"></div>
+					</div>
 					<img src="images/tomnatyk.jpg" width="200px">
 					<div>Томна́тик — гора в Українських Карпатах, у масиві Яловичорські гори. Розташована на хребті Томнатикул, у межах Путильського району Чернівецької області, на північний схід від села Сарата і на північний захід від перевалу Семенчук.
 					Висота 1565,3 м. Вершина незаліснена, схили порівняно пологі; підніжжя гори поросле лісом. На північ від Томнатика розташована найвища гора Яловичорського масиву — Яровиця (1586,9 м).
@@ -109,6 +112,15 @@
 	       });
 	  });
   	</script>
+
+  	<script src="JS/rating.js"></script>
+
+	<script>
+		var ratingElements = document.getElementsByClassName('rating');
+		for (var i = 0; i < ratingElements.length; i++) {
+			rating(ratingElements[i]);
+		}	
+	</script>
 
   	<script src="JS/form.js"></script>
 
