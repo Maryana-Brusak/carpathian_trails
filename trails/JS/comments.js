@@ -1,5 +1,5 @@
 		function sendRequest(url, cfunc) {
-  			try {  			
+  			  			
 	  			var formData = new FormData(document.querySelector("form"));
 				formData.set('page', document.location.hash.substring(1));
 
@@ -14,12 +14,11 @@
 
 		 	 	xhttp.open("POST", url, true);
 		  		xhttp.send(formData);
-	  		}
-	  		catch(e) {}
+	  		
 
 	  		return false;
 		}	
-
+		var articleComment = document.createElement('article');
 		function commentRender(name, comment) {
 			var divName = document.createElement('div');
 			divName.className = ('userName');
@@ -29,7 +28,7 @@
 			divComment.className = ('userComment');
 			divComment.innerHTML = comment;
 
-			var articleComment = document.createElement('article');
+			
 			articleComment.className = ('comment');
 			articleComment.appendChild(divName);
 			articleComment.appendChild(divComment);
@@ -42,7 +41,11 @@
 			var xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {
 				if (xhttp.readyState == 4 && xhttp.status == 200) {
-					var comments = JSON.parse(xhttp.responseText);				
+					var comments = JSON.parse(xhttp.responseText);
+
+					while (articleComment.lastChild) {
+						articleComment.removeChild(articleComment.lastChild);
+					}				
 
 		  			for(var i = 0; i < comments.length; i++) {
 	  					commentRender(comments[i].name, comments[i].comment);	
