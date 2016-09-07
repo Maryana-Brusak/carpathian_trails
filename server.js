@@ -41,7 +41,9 @@ const Trail = mongoose.model('Trail', mongoose.Schema ({
 	image: String,
 	description: String,
 	map: Object,
-	region: String
+	region: String,
+	duration: String,
+	type: String
 }));
 
 server.use(restify.acceptParser(server.acceptable));
