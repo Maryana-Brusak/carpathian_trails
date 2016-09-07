@@ -4,6 +4,8 @@
 	<title>Carpathian trails</title>
 	<meta charset="UTF-8">	
 
+	<script src="JS/script.js"></script>
+
 	<link rel="stylesheet" type="text/css" href="CSS/style.css">
 	<link rel="stylesheet" type="text/css" href="plugins/slick/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="plugins/slick/slick-theme.css"/>
@@ -88,10 +90,15 @@
 		</footer>
 		</main>
 
-		<script>
+		<script>		
+
 			var FilterWrapper = document.getElementById('itemsToFilter');
 			function renderTrailsToFilter(trail) {			
 				var contentWrapper = document.createElement('li');
+				contentWrapper.setAttribute('data-type', trail.type);
+				contentWrapper.setAttribute('data-duration', trail.duration);
+				contentWrapper.setAttribute('data-region', trail.region);
+
 				var content = '<a href="trails.html#' + trail._id + '">' + trail.header + '</a>';
 
 				contentWrapper.innerHTML = content;
@@ -109,8 +116,10 @@
 						}
 
 			  			for(var i = 0; i < trails.length; i++) {
-		  					renderTrailsToFilter(trails[i]);	
+		  					renderTrailsToFilter(trails[i]);
+		  						
 		  				}
+		  				loadFilters ();
 
 		  			}
 				}
@@ -119,9 +128,13 @@
 				xhttp.send();
 			}
 			loadTrailsToFilter();
+
+
+
+
 		</script>
 
-		<script src="JS/script.js"></script>			
+					
 	</body>
 	</div>
 </html>
