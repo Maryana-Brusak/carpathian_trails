@@ -1,45 +1,30 @@
 
 
-	function initMap(data){
-		return function() {
-			preventGoogleFontLoading();
+	function initMap(dataItem, mapEl){
+		preventGoogleFontLoading();
 
-			for (var i = 0; i < data.length; i++) {
+		var latlng = new google.maps.LatLng(dataItem.Lat, dataItem.Lng);
+		var mapOptions = {
+	        zoom: 10,
+	        center: latlng,
+	        mapTypeId: google.maps.MapTypeId.TERRAIN
+    	};	
 
-				var dataItem = data[i];
-				var latlng = new google.maps.LatLng(dataItem.Lat, dataItem.Lng);
-				var mapOptions = {
-			        zoom: 10,
-			        center: latlng,
-			        mapTypeId: google.maps.MapTypeId.TERRAIN
-		    	};	
+    	var map = new google.maps.Map(mapEl, mapOptions);
 
-		    	var map = new google.maps.Map(document.getElementById(dataItem.id), mapOptions);
+    	var myMarker = new google.maps.Marker(
+	    {
+	        position: latlng,
+	        map: map,
+	        title: dataItem.title
+	   });
 
-		    	var myMarker = new google.maps.Marker(
-			    {
-			        position: latlng,
-			        map: map,
-			        title: dataItem.title
-			   });
+	   var infowindow = new google.maps.InfoWindow({
+			content: dataItem.title
+		});	
 
-			   var infowindow = new google.maps.InfoWindow({
-					content: dataItem.title
-				});	
-
-				infowindow.open(map,myMarker);
-			}
-		}
-
+		infowindow.open(map, myMarker);
 	}
-
-	function initGoogleMaps(data) {
-		google.maps.event.addDomListener(window, 'load', initMap(data));
-	}
-
-
-
-
 
 	function preventGoogleFontLoading() {
 		var head = document.getElementsByTagName('head')[0];

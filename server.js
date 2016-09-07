@@ -10,7 +10,7 @@ const server = restify.createServer({
 });
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://root:trails123@ds017896.mlab.com:17896/db_carpatian_trails');/*mongodb://<dbuser>:<dbpassword>@ds017896.mlab.com:17896/db_carpatian_trails*/
+mongoose.connect('mongodb://root:trails123@ds017896.mlab.com:17896/db_carpatian_trails');
 
 const Order = mongoose.model('Order', mongoose.Schema({
  trek_name: String,
@@ -36,13 +36,14 @@ const Rating =  mongoose.model('Rating', mongoose.Schema({
 	count: Number
 }));
 
-/*const Trail = mongoose.model('Trail', mongoose.Schema ({
+const Trail = mongoose.model('Trail', mongoose.Schema ({
 	header: String,
-	image: ,
+	image: String,
 	description: String,
-	map: []
+	map: Object,
+	region: String
 }));
-*/
+
 server.use(restify.acceptParser(server.acceptable));
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
@@ -66,6 +67,14 @@ server.get('comments/:pageId', (req, res) => {
 		res.send(200, comments);
 	})
 
+});
+
+server.get('tracks/:regionId', (req, res) => {
+	var regionId = req.params.regionId;
+	Trail.find({'region': regionId == 'all' ? {$ne : null} : regionId}, function (err, trails) {
+		if (err) return console.error(err);
+		res.send(200, trails);
+	})
 });
 
 server.post('order', (req, res) => {

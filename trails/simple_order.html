@@ -2,8 +2,7 @@
 <html>
 <head>
 	<title>Carpathian trails</title>
-	<meta charset="UTF-8">
-	<!-- <script src="JS/angular.min.js"></script> -->
+	<meta charset="UTF-8">	
 
 	<link rel="stylesheet" type="text/css" href="CSS/style.css">
 	<link rel="stylesheet" type="text/css" href="plugins/slick/slick.css"/>
@@ -88,6 +87,40 @@
 			<p>© 2016 Мар'яна Брусак</p>
 		</footer>
 		</main>
+
+		<script>
+			var FilterWrapper = document.getElementById('itemsToFilter');
+			function renderTrailsToFilter(trail) {			
+				var contentWrapper = document.createElement('li');
+				var content = '<a href="trails.html#' + trail._id + '">' + trail.header + '</a>';
+
+				contentWrapper.innerHTML = content;
+				FilterWrapper.appendChild(contentWrapper);			
+			}
+
+			function loadTrailsToFilter(all) {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+					if (xhttp.readyState == 4 && xhttp.status == 200){
+						var trails = JSON.parse(xhttp.responseText);
+
+						while (FilterWrapper.lastChild) {
+							FilterWrapper.removeChild(FilterWrapper.lastChild);
+						}
+
+			  			for(var i = 0; i < trails.length; i++) {
+		  					renderTrailsToFilter(trails[i]);	
+		  				}
+
+		  			}
+				}
+				
+				xhttp.open("GET", "/tracks/all", true);
+				xhttp.send();
+			}
+			loadTrailsToFilter();
+		</script>
+
 		<script src="JS/script.js"></script>			
 	</body>
 	</div>

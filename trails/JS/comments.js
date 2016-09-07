@@ -1,6 +1,8 @@
 		function sendRequest(url, cfunc) {
   			try {  			
 	  			var formData = new FormData(document.querySelector("form"));
+				formData.set('page', document.location.hash.substring(1));
+
 			  	var xhttp;
 			 	 xhttp = new XMLHttpRequest();
 			 	 xhttp.onreadystatechange = function() {
