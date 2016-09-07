@@ -41,22 +41,26 @@
 		}
 
 		function doRating(e) {
-			var rating = e.target.getAttribute("data-rating");
-			var trailId = ratingEl.getAttribute('data-trail');
-				
-			var xhttp = new XMLHttpRequest();
-			xhttp.onreadystatechange = function() {
-				if (xhttp.readyState == 4 && xhttp.status == 200){
-					var newRating = parseInt(xhttp.responseText);
-					if (newRating !== 'NaN' && newRating > 0 && newRating <= 5) {
-						drawStars(newRating);	
-					} 					
+			if (!ratingEl.classList.contains('voted')) {
+				ratingEl.classList.add('voted');
+
+				var rating = e.target.getAttribute("data-rating");
+				var trailId = ratingEl.getAttribute('data-trail');
+					
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+					if (xhttp.readyState == 4 && xhttp.status == 200){
+						var newRating = parseInt(xhttp.responseText);
+						if (newRating !== 'NaN' && newRating > 0 && newRating <= 5) {
+							drawStars(newRating);
+						} 					
+					}
 				}
+				
+				xhttp.open("POST", "/rating/" + trailId, true);
+				xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				xhttp.send("rating=" + rating);
 			}
-			
-			xhttp.open("POST", "/rating/" + trailId, true);
-			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			xhttp.send("rating=" + rating);
 		};
 
 

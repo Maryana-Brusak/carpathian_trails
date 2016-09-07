@@ -84,7 +84,7 @@
 				contentWrapper.setAttribute('data-duration', trail.duration);
 				contentWrapper.setAttribute('data-region', trail.region);
 
-				var content = '<a href="trails.html#' + trail._id + '">' + trail.header + '</a>';
+				var content = '<a href="trails.html?trail=' + trail._id + '#' + trail.region + '">' + trail.header + '</a>';
 
 				contentWrapper.innerHTML = content;
 				FilterWrapper.appendChild(contentWrapper);			

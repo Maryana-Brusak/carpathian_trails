@@ -67,6 +67,10 @@ header p a {
 
 }
 
+#active {
+    background-color: #337326;
+}
+
 .menuitems li :nth-child(1) {
     order: 0;
     flex: 1 1 auto;
@@ -518,22 +522,25 @@ div .mapheader:hover{
     width: 12px;
     height: 12px;
     cursor: pointer;
-
+}
+.voted .rated, .voted .unrated {
+    cursor: default;
 }
 
 
 .rating:hover .unrated, .rating:hover .rated{
     background-color: orange;
-
 }
+
 .unrated:hover ~ .unrated, .rated:hover ~ .rated, .rated:hover ~ .unrated{
     background-color: #9CC893;
 }
-.rated {
+
+.rated, .rating.voted .rated {
     background-color: #337326;
 }   
 
-.unrated {
+.unrated, .rating.voted .unrated {
     background-color: #9CC893; 
 }
 
@@ -590,9 +597,8 @@ div .mapheader:hover{
 	}
 
 	.menuitems li a {
-		 display: inline-block;
-
-	    color: white;
+		display: inline-block;
+        color: white;
 	    text-align: center;
 	    padding: 14px 16px;
 	    text-decoration: none;
