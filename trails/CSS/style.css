@@ -518,8 +518,17 @@ div .mapheader:hover{
     width: 12px;
     height: 12px;
     cursor: pointer;
+
 }
 
+
+.rating:hover .unrated, .rating:hover .rated{
+    background-color: orange;
+
+}
+.unrated:hover ~ .unrated, .rated:hover ~ .rated, .rated:hover ~ .unrated{
+    background-color: #9CC893;
+}
 .rated {
     background-color: #337326;
 }   
