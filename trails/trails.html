@@ -98,8 +98,9 @@
 		onNavigation();
 
 		function onNavigation() {
-			var regionId = document.location.hash.substring(1);
+			var regionId = document.location.hash.substring(1); //#che -> che
 
+			// change active item in menu
 			var active = document.getElementById('active');
 			active && active.removeAttribute('id');
 			document.querySelector('a[href="trails.html#' + regionId +'"]').setAttribute('id', 'active');
@@ -156,6 +157,9 @@
 			initMap(trail.map, document.getElementById('map' + trail._id));
 		}
 
+		// get get parameter from url
+		// used when user navigates from filters page to one exact track
+		// trails.html?trail=57d08051f36d281e632b1601#ro
 		function getQueryParameter(name) {
 			name = name.replace(/[\[\]]/g, "\\$&");
 

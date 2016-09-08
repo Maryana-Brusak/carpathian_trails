@@ -32,7 +32,7 @@
 		<section class="order_form">
 			<form action="order" method="post" onsubmit="return sendRequest('http://localhost/order', orderFunction);">
 				<section class="mountQuote">
-					<h3 class="mountQuote_title">Офомити замовлення</h3>
+					<h3 class="mountQuote_title">Оформити замовлення</h3>
 				</section>
 				<label>Ваш маршрут:<input type="text" name="trek_name" value="Track name"required="" id="nameOfTrek"></input>*</label>
 				 <fieldset class="form_fieldset">
@@ -47,7 +47,7 @@
 				 </fieldset>
 				 <fieldset class="form_fieldset">
 				 	<legend>3 крок</legend>
-				 		<div><label>Оберіть дату:<input type="date" name="date" min="2016-09-01" max="2016-12-01"></input></label></div>
+				 		<div><label>Оберіть дату:<input type="date" name="date" min="2016-09-09" max="2016-12-01"></input></label></div>
 				 		<div><label>Вкажіть кількість осіб:
 							<select name="num" value="people">
 							  <option value="1" selected>1</option>
@@ -88,22 +88,17 @@
 
   	<script>
   		function sendRequest(url, cfunc) {
-  			try {  			
-	  			var formElement = document.querySelector("form");
-			  	var xhttp;
-			 	 xhttp = new XMLHttpRequest();
-			 	 xhttp.onreadystatechange = function() {
-			    	if (xhttp.readyState == 4 && xhttp.status == 201) {
-			      	cfunc(xhttp);
-			    	}
-			  	};
+		  	var xhttp = new XMLHttpRequest();
+		 	xhttp.onreadystatechange = function() {
+		    	if (xhttp.readyState == 4 && xhttp.status == 201) {
+		      	cfunc(xhttp);
+		    	}
+		  	};
 
-		 	 	xhttp.open("POST", url, true);
-		  		xhttp.send(new FormData(formElement));
-	  		}
-	  		catch(e) {}
-
-	  		return false;
+	 	 	xhttp.open("POST", url, true);
+	  		xhttp.send(new FormData(document.forms[0]));
+  		
+  			return false;
 		}
   	
   		function orderFunction() {

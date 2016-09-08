@@ -19,7 +19,7 @@ const Order = mongoose.model('Order', mongoose.Schema({
 	 surname: String,
 	 phone_number: Number,
 	 email_address: String,
-	 date: Number,
+	 date: String,
 	 num: Number,
 	 comment: String 
 }));
@@ -83,8 +83,15 @@ server.get('tracks/:regionId', (req, res) => {
 server.post('order', (req, res) => {
 	console.log('Post order started');
 	var order = new Order(req.body);
-	order.save();
-	res.send(201);
+	order.save(function (err) {
+	  if (err) {
+	  	console.log(err);
+	  	res.send(500, err.msg );
+	  } else {
+	  	res.send(201);
+	  }
+	});
+	
 });
 
 server.get(/\/trails\/?.*/, restify.serveStatic({

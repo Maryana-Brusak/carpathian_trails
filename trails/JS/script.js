@@ -18,18 +18,19 @@ function loadFilters () {
 	function filterTrails(e) {
 	    var clickedFilter = e.target;
 		var filterType = clickedFilter.getAttribute("data-filtering");
+		var filterBy = clickedFilter.value;
 
 	    for (var i = 0; i < trailsToFilter.length; i++) {
 	        var currentTrail = trailsToFilter[i];
-			var filterBy = clickedFilter.value;
+			
 
 			if (currentTrail.getAttribute("data-" + filterType) == filterBy) {
 				if (clickedFilter.checked == true) {
 					//show hidden trail
 					var index = currentTrail.filtering.indexOf(filterBy);
 					currentTrail.filtering.splice(index, 1);
-
-					if (!currentTrail.filtering.length) {
+					//check if there is some filters left
+					if (currentTrail.filtering.length == 0) {
 						currentTrail.classList.remove("hideItem");
 						currentTrail.classList.add("showItem");
 					}

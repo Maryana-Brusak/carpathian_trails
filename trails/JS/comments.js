@@ -1,7 +1,7 @@
 function sendRequest(url, cfunc) {
 	  			
 	var formData = new FormData(document.querySelector("form"));
-	formData.set('page', document.location.hash.substring(1));
+	formData.set('page', document.location.hash.substring(1));//add property with region
 
   	var xhttp;
  	 xhttp = new XMLHttpRequest();

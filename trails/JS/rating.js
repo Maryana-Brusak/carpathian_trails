@@ -1,6 +1,6 @@
 	function rating(ratingEl) {
 		
-		ratingEl.addEventListener("click", doRating, false);
+		ratingEl.addEventListener("click", sendRating, false);
 		getRating();
 
 		function getRating() {
@@ -40,7 +40,7 @@
 			}
 		}
 
-		function doRating(e) {
+		function sendRating(e) {
 			if (!ratingEl.classList.contains('voted')) {
 				ratingEl.classList.add('voted');
 
@@ -50,7 +50,7 @@
 				var xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function() {
 					if (xhttp.readyState == 4 && xhttp.status == 200){
-						var newRating = parseInt(xhttp.responseText);
+						var newRating = parseInt(xhttp.responseText);//parse string into integer
 						if (newRating !== 'NaN' && newRating > 0 && newRating <= 5) {
 							drawStars(newRating);
 						} 					
