@@ -11,23 +11,24 @@ const server = restify.createServer({
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://root:trails123@ds017896.mlab.com:17896/db_carpatian_trails');
+// C:\Program Files\MongoDB\Server\3.2\bin>mongoimport -h ds017896.mlab.com:17896 -d db_carpatian_trails -c trails -u root -p trails123 --jsonArray --file trails.json
 
 const Order = mongoose.model('Order', mongoose.Schema({
- trek_name: String,
- name: String,
- surname: String,
- phone_number: Number,
- email_address: String,
- date: Number,
- num: Number,
- comment: String 
+	 trek_name: String,
+	 name: String,
+	 surname: String,
+	 phone_number: Number,
+	 email_address: String,
+	 date: Number,
+	 num: Number,
+	 comment: String 
 }));
 
 const Comment = mongoose.model('Comment', mongoose.Schema({
- name: String,
- email: String,
- comment: String, 
- page: String
+	 name: String,
+	 email: String,
+	 comment: String, 
+	 page: String
 }));
 
 const Rating =  mongoose.model('Rating', mongoose.Schema({

@@ -29,7 +29,7 @@ header h1 a {
 	float: left;
 	width: 700px;
 	padding: 10px 0 0 25px;
-	color: #71A865; /*#71A865*/
+	color: #71A865; 
 	text-decoration: none;
 
 }
@@ -39,7 +39,7 @@ header p a {
     float: left;
     width: 500px;
     padding: 0 0 0 30px;
-    color: #71A865; /*#71A865*/
+    color: #71A865; 
     text-decoration: none;
 
 }
@@ -56,8 +56,7 @@ header p a {
     list-style-type: none;
     margin: 0 auto;
     overflow: hidden;
-    background-color: #71A865;
-    
+    background-color: #71A865;    
 
 }
 
@@ -129,7 +128,7 @@ header p a {
 }
 
 .slider .slick-prev, .slick-next {
-	    z-index: 1;
+    z-index: 1;
 }
 
 
@@ -169,7 +168,7 @@ header p a {
     align-self: center;
     }
 #infoBlock .caption a{
-    color: black; /*#337326*/
+    color: black; 
 }
 
 #infoBlock .caption a:link {
@@ -330,7 +329,7 @@ legend {
 }
 
 
-/*Сторінка швидкої фільтрації маршрутів*/
+/*Simple order - filtering page*/
 .filter_list {
 	margin: 10px;
 }
@@ -604,7 +603,7 @@ div .mapheader:hover{
 	    text-decoration: none;
 	}
 
-	main .slider{
+	.slider{
 		display: none;
 	}
 	figure {
